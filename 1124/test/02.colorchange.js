@@ -18,3 +18,5 @@ sub.addEventListener('click',function(){
     //錯誤寫法
     //newResult-=1
 })
+
+//01
