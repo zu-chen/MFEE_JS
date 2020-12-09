@@ -20,3 +20,10 @@ for (i = 1; i < 32; i++) {
   dateString += `<option value="">${i}</option>`
 }
 date.innerHTML = dateString
+
+year.addEventListener('change', function () {
+  month.innerHTML = `<option value="">請選擇月份</option>`
+  date.innerHTML = `<option value="">請選擇日期</option>`
+})
+
+month.addEventListener('change', function () {})
