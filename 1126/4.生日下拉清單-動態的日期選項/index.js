@@ -45,31 +45,33 @@ let birthY = 0
 let birthM = 0
 let birthD = 0
 
-year.addEventListener('change', function () {
-  // 更新選擇的變數值
-  birthY = +year.value
+// year.addEventListener('change', function () {
+//   // 更新選擇的變數值,year被選到的值
+//   birthY = +year.value
 
-  // 當有使用者有選到了年和月時才作更新日期選項
-  if (birthY && birthM) {
-    // 得到該西元年、月應該要有幾天
-    const days = new Date(birthY, birthM, 0).getDate()
-    /////// 日期呈現
-    let dateOptionString = '<option value="0">請選擇日期</option>'
-    for (let i = 1; i < days + 1; i++) {
-      dateOptionString += `<option value="${i}">${i}</option>`
-    }
+//   // 當有使用者有選到了年和月時才作更新日期選項
+//   if (birthY && birthM) {
+//     // 得到該西元年、月應該要有幾天
+//     const days = new Date(birthY, birthM, 0).getDate()
+//     /////// 日期呈現
+//     let dateOptionString = '<option value="0">請選擇日期</option>'
+//     for (let i = 1; i < days + 1; i++) {
+//       dateOptionString += `<option value="${i}">${i}</option>`
+//     }
 
-    // 將日期的選項值呈現刷新
-    date.innerHTML = dateOptionString
+//     // 將日期的選項值呈現刷新
+//     date.innerHTML = dateOptionString
 
-    // 日期恢復預設值為0
-    birthD = 0
-  }
-  console.log(birthY, birthM, birthD)
-})
+//     // 日期恢復預設值為0
+//     birthD = 0
+//   }
+//   console.log(birthY, birthM, birthD)
+// })
+
 
 month.addEventListener('change', function () {
-  // 更新選擇的變數值
+  // 更新選擇的變數值,month被選到的值
+
   birthM = +month.value
 
   // 當有使用者有選到了年和月時才作更新日期選項
@@ -91,9 +93,9 @@ month.addEventListener('change', function () {
   console.log(birthY, birthM, birthD)
 })
 
-date.addEventListener('change', function () {
-  // 更新選擇的變數值
-  birthD = +date.value
+// date.addEventListener('change', function () {
+//   // 更新選擇的變數值
+//   birthD = +date.value
 
-  console.log(birthY, birthM, birthD)
-})
+//   console.log(birthY, birthM, birthD)
+// })

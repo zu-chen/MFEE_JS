@@ -1,27 +1,43 @@
-const display = document.getElementById('display')
+const message = document.getElementById('message')
 const start = document.getElementById('start')
 const reset = document.getElementById('reset')
 
+// 單次抽卡
+// start.addEventListener('click', function () {
+//   const rand = Math.floor(Math.random() * 100) + 1
+
+//   if (rand >= 1 && rand <= 10) {
+//     message.innerHTML = '五星卡'
+//   }
+
+//   if (rand >= 11 && rand <= 40) {
+//     message.innerHTML = '四星卡'
+//   }
+
+//   if (rand >= 41 && rand <= 100) {
+//     message.innerHTML = '三星卡'
+//   }
+// })
+
+// 十連抽
 start.addEventListener('click', function () {
-  for (var j = 1; j < 10; j++) {
-    var i = Math.floor(Math.random() * 100) + 1
-    // 1-3
-    if (i < 4) {
-      display.innerHTML += '<span style="color:gold">五星卡</span>'
+  for (let i = 1; i < 11; i++) {
+    const rand = Math.floor(Math.random() * 100) + 1
+    if (rand < 4) {
+      message.innerHTML += '<span style="color: gold;">五星卡</span>'
     }
 
-    // 4-30
-    if ((i > 3) & (i < 31)) {
-      display.innerHTML += '<span style="color:silver">四星卡</span>'
+    if (rand > 3 && rand < 21) {
+      message.innerHTML += '<span style="color: silver;">四星卡</span>'
     }
 
-    // 31-100
-    if (i > 30) {
-      display.innerHTML += '三星卡'
+    if (rand > 20) {
+      message.innerHTML += '<span>三星卡</span>'
     }
   }
+  message.innerHTML += '<br>'
 })
 
 reset.addEventListener('click', function () {
-  display.innerHTML = ''
+  message.innerHTML = ''
 })

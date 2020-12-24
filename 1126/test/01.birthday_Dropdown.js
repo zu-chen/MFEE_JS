@@ -27,3 +27,8 @@ year.addEventListener('change', function () {
 })
 
 month.addEventListener('change', function () {})
+
+// addEventListener未做
+
+// 顯示是否滿18歲
+if (year.value)
