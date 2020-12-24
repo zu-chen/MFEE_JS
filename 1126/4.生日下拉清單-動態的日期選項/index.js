@@ -67,6 +67,7 @@ year.addEventListener('change', function () {
   }
   // 觀察目前使用者選擇的情況
   console.log(birthY, birthM, birthD)
+  console.log(date.value)
 })
 
 month.addEventListener('change', function () {

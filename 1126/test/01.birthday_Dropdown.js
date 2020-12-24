@@ -21,14 +21,44 @@ for (let i = 1; i < 32; i++) {
 }
 date.innerHTML = dateString
 
-// year.addEventListener('change', function () {
-//   month.innerHTML = `<option value="">請選擇月份</option>`
-//   date.innerHTML = `<option value="">請選擇日期</option>`
-// })
+let birthY = 0
+let birthM = 0
+let birthD = 0
 
-// month.addEventListener('change', function () {})
+year.addEventListener('change', function () {
+  birthY = +year.value
+  if (birthY && birthM) {
+    const days = new Date(birthY, birthM, 0).getDate()
+    // 要先回復原樣!
+    let dateString = `<option value="0">請選擇日期</option>`
+    for (let i = 1; i < days; i++) {
+      dateString += `<option value="${i}">${i}</option>`
+    }
+    // 並且印出來
+    date.innerHTML = dateString
+  }
+  console.log(birthY, birthM, birthD)
+})
 
-// addEventListener未做
+month.addEventListener('change', function () {
+  birthM = +month.value
+  if (birthY && birthM) {
+    const days = new Date(birthY, birthM, 0).getDate()
+    // 要先回復原樣!
+    let dateString = `<option value="0">請選擇日期</option>`
+    for (let i = 1; i < days; i++) {
+      dateString += `<option value="${i}">${i}</option>`
+    }
+    // 並且印出來
+    date.innerHTML = dateString
+  }
+  console.log(birthY, birthM, birthD)
+})
+
+date.addEventListener('change', function () {
+  birthD = +date.value
+  console.log(birthY, birthM, birthD)
+})
 
 // 顯示是否滿18歲
 // if (year.value)
