@@ -2,6 +2,8 @@
 const year = document.getElementById('year')
 const month = document.getElementById('month')
 const date = document.getElementById('date')
+const checkAge = document.getElementById('checkAge')
+const message = document.getElementById('message')
 
 let yearString = `<option value="0">請選擇西元年</option>`
 for (let i = 1910; i < 2011; i++) {
@@ -61,4 +63,20 @@ date.addEventListener('change', function () {
 })
 
 // 顯示是否滿18歲
-// if (year.value)
+checkAge.addEventListener('click', function () {
+  if (birthY && birthM && birthD) {
+    const now = new Date()
+    const nowY = now.getFullYear()
+    const nowM = now.getMonth() + 1
+    const nowD = now.getDate()
+    let isOver18 = false
+
+    if (nowY - birthY > 18) isOver18 = true
+    if (nowY - birthY === 18 && nowM - birthM > 0) isOver18 = true
+    if (nowY - birthY === 18 && nowM - birthM === 0 && nowD - birthD >= 0)
+      isOver18 = true
+    message.innerHTML = isOver18 ? '已滿18歲' : '未滿18歲'
+  } else {
+    alert('請先選擇出生年月日')
+  }
+})
