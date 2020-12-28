@@ -80,3 +80,5 @@ checkAge.addEventListener('click', function () {
     alert('請先選擇出生年月日')
   }
 })
+
+// just try it
